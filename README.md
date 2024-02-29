@@ -4,13 +4,15 @@ This repository contains the code for a simple microservice system. It comprises
 RabbitMQ cluster from [CloudAMQP] (https://customer.cloudamqp.com/) is used for the message queuing system with the necessary configuration for the cluster included in the users and notifications services .env files.
 
 # How to install  
-1. Clone the repository  
+1 a. Clone the repository  
 The database data size may  cause some issues cloning the project so run:  
 ```
 git config --global http.version HTTP/1.1
 git config --global http.postBuffer 157286400
 git clone https://github.com/Hallykola/laravel-microservices-demo.git
 ```
+b. Create a new file with name .env in users  folder and copy the contents of the .env.example file in the same folder to it.  
+ Create a new file with name .env in notifications  folder and copy the contents of the .env.example file in the same folder to it.
 
 2. Ensure you have docker running on your device. Then,  
 cd into the folder and  

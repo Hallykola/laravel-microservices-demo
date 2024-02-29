@@ -6,8 +6,7 @@ services:
       command: >
               sh -c "php artisan config:clear
               && php artisan serve --host=0.0.0.0"
-      volumes:
-        - ./users:/app
+     
       ports:
         - 8001:8000
       depends_on:
@@ -17,8 +16,7 @@ services:
         context: ./users
         dockerfile: ./Dockerfile
       command: "php artisan queue:work"
-      volumes:
-        - ./users:/app
+     
       depends_on:
         - db
 
@@ -28,8 +26,7 @@ services:
             dockerfile: ./Dockerfile
           command: >
                   sh -c "php artisan serve --host=0.0.0.0"
-          volumes:
-            - ./notifications:/app
+         
           ports:
             - 8002:8000
           depends_on:
@@ -40,8 +37,7 @@ services:
             context: ./notifications
             dockerfile: ./Dockerfile
           command: "php artisan queue:work"
-          volumes:
-            - ./notifications:/app
+         
           depends_on:
             - db
     db:
