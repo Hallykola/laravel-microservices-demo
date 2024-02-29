@@ -28,7 +28,7 @@ cd into the folder and
  f. The php-myAdmin service container for managing the database
 
 4. For problems with database initialization run   
-``` docker exec -it sh ```  
+``` docker exec -it <container-id> sh ```  
 in the user and/or notifications container. Then run  
 ``` php artisan migrate```  
 to migrate the database. 
@@ -39,4 +39,7 @@ A json object is sent in response to the request and a message is sent to the Ra
 # Testing
 Test files can be found in the test foldrs of the users and notification folders respectively. 
 To run the tests,run   
-
+```
+docker exec -it <container-id> sh 
+php artisan test
+```
